@@ -148,5 +148,14 @@
 
     <!-- Our codes -->
     <script src="js/main.js"></script>
+    <script>
+      // Reset the form when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        if (form) {
+          form.reset();
+        }
+      });
+    </script>
   </body>
 </html>
