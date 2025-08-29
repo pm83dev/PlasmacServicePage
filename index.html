@@ -101,6 +101,10 @@
             </div>
             <div class="mb-3">
               <label for="serial" class="form-label">Serial Number:</label>
+              <br />
+              <small class="text-muted"
+                >Check on the cabinet plate <e class="g">SN12345</e></small
+              >
               <input
                 type="text"
                 class="form-control"
@@ -111,6 +115,11 @@
             </div>
             <div class="mb-3">
               <label for="job" class="form-label">Job Number:</label>
+              <br />
+              <small class="text-muted"
+                >Check on the cabinet plate or on the HMI
+                <e class="g">P25-000</e>
+              </small>
               <input
                 type="text"
                 class="form-control"
@@ -120,13 +129,21 @@
               />
             </div>
             <div class="mb-3">
-              <label>
-                Your file/image:
-                <input type="file" name="upload" class="form-control" />
-              </label>
+              <label for="upload" class="form-label">Your files/images:</label>
+              <input
+                type="file"
+                name="upload"
+                id="upload"
+                class="form-control"
+                multiple
+              />
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Your message:</label>
+              <br />
+              <small class="text-muted"
+                >Describe your issue or request in detail.</small
+              >
               <textarea
                 class="form-control"
                 id="message"
@@ -155,6 +172,57 @@
         if (form) {
           form.reset();
         }
+
+        const uploadContainer = document.querySelector("#upload").parentElement;
+
+        // Add remove button to the first file input
+        const firstUploadField = document.getElementById("upload");
+        const firstWrapper = document.createElement("div");
+        firstWrapper.className = "d-flex align-items-center mt-2";
+
+        const removeFirstButton = document.createElement("button");
+        removeFirstButton.type = "button";
+        removeFirstButton.className = "btn btn-danger btn-sm ms-2";
+        removeFirstButton.textContent = "Remove";
+
+        removeFirstButton.addEventListener("click", function () {
+          firstUploadField.value = ""; // Clear the file input
+        });
+
+        firstUploadField.classList.add("me-2");
+        firstWrapper.appendChild(firstUploadField);
+        firstWrapper.appendChild(removeFirstButton);
+        uploadContainer.appendChild(firstWrapper);
+
+        // Handle dynamically added file inputs
+        uploadContainer.addEventListener("change", function (event) {
+          if (
+            event.target &&
+            event.target.type === "file" &&
+            event.target.files.length > 0
+          ) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "d-flex align-items-center mt-2";
+
+            const newUploadField = document.createElement("input");
+            newUploadField.type = "file";
+            newUploadField.name = "upload";
+            newUploadField.className = "form-control me-2";
+
+            const removeButton = document.createElement("button");
+            removeButton.type = "button";
+            removeButton.className = "btn btn-danger btn-sm";
+            removeButton.textContent = "Remove";
+
+            removeButton.addEventListener("click", function () {
+              wrapper.remove();
+            });
+
+            wrapper.appendChild(newUploadField);
+            wrapper.appendChild(removeButton);
+            uploadContainer.appendChild(wrapper);
+          }
+        });
       });
     </script>
   </body>
