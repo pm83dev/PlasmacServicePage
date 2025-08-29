@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Plasmac, plasmac, service" />
+    <meta name="keywords" content="Plasmac, plasmac, service" />
+    <meta name="author" content="Paolo Miccoli" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <title>Plasmac - Service</title>
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="text-white py-3" style="background-color: #83b9e0">
+      <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="h3">PLASMAC Service Request</h1>
+        <img
+          class="img-fluid"
+          src="./images/logo-plasmac.png"
+          alt="ProPic"
+          style="max-height: 50px"
+        />
+      </div>
+      <nav class="text-center mt-2">
+        <a
+          href="https://www.plasmac.it/"
+          target="_blank"
+          class="text-white text-decoration-none"
+        >
+          <i class="fas fa-external-link-alt"></i> Plasmac Website
+        </a>
+      </nav>
+    </header>
+
+    <main class="container mt-4">
+      <div class="text-center mb-4">
+        <h5>
+          Fill the form with the required information to submit your request.
+        </h5>
+        <p>
+          Our technical team will review your request and get back to you as
+          soon as possible. All fields are required.
+        </p>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form action="https://formspree.io/f/xbladqrd" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone number:</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                name="phone"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="company" class="form-label">Company name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="company"
+                name="company"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="serial" class="form-label">Serial Number:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="serial"
+                name="serial"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="job" class="form-label">Job Number:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="job"
+                name="job"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your message:</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+      <p class="mb-0">&copy; 2025 PM Software & Automation</p>
+      <small>PlasmacService</small>
+    </footer>
+
+    <!-- Our codes -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
